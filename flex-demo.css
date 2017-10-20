@@ -1,0 +1,361 @@
+/* CSS Flexbox */
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	width: 100%;
+	color: #434344;
+}
+
+.container {
+	max-width: 80%;
+	margin: 30px auto;
+}
+
+@media (max-width: 500px) {
+	.container {
+		width: 320px;
+		min-width: 320px;
+	}
+}
+
+h1 {
+	padding: 10px 10px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid #000;
+}
+
+h2 {
+	padding-top: 10px;
+}
+
+p {
+	padding: 3px 0 10px 0;
+	line-height: 30px;
+	font-size: 20px;
+	text-indent: 2em;
+	color: #808080;
+}
+
+a {
+	word-wrap: break-word;
+}
+
+code {
+	padding: 5px;
+	margin: 0 5px;
+	background-color: #FFB6C1;
+	border-radius: 8px;
+	font-family: Tahoma;
+	font-size: 15px;
+	color: #434344;
+	
+}
+
+.title {
+	margin: 10px 10px;
+	padding: 10px 15px 0 15px;
+}
+
+.title h3 {
+	margin-bottom: 10px;
+}
+
+.codeWrap {
+	background-color: #F5F5F5;
+	border: 5px solid #778899;
+	border-radius: 20px;
+}
+
+.codeWrap pre{
+	padding: 10px 15px;
+	font-family: Tahoma;
+	line-height: 25px;
+	white-space: pre-wrap!important;  /*保留空白，进行换行*/
+	word-wrap: break-word!important;  /*连续字符换行*/
+}
+
+.flexWrap {
+	background-color: #E6E6FA;
+	border: 5px solid #FFFFE0;
+	border-radius: 20px;
+
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.showBox {
+	margin: 5px 0;
+	padding-top: 5px;
+}
+
+.flexAdjust .showBox {
+	width: 100%;
+}
+
+.attrCodeWrap {
+	padding-bottom: 15px;
+	text-align: center;
+}
+
+.attrCodeWrap span {
+	display: block;
+	margin: 0 auto;
+	color: #909090;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.box {
+	margin: 15px auto;
+	min-width: 270px;
+	border-radius: 20px;
+	background-color: #FFF;
+	display: flex;
+	display: -webkit-flex;
+}
+
+.boxMin {
+	width: 20%;
+}
+
+.boxMax {
+	width: 40%;
+}
+
+.item {
+	padding: 5px;
+	margin: 8px;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background-color: #87CEFA;
+	font-family: Arial Black;
+	font-size: 30px;
+	font-weight: bold;
+	color: #FFF;
+	line-height: 40px;
+	text-align: center;
+}
+
+#box1 {
+	flex-direction: row;
+}
+
+#box2 {
+	flex-direction: row-reverse;
+}
+
+#box3 {
+	flex-direction: column;
+}
+
+#box4 {
+	flex-direction: column-reverse;
+}
+
+#box5 {
+	flex-wrap: nowrap;
+}
+
+#box6 {
+	flex-wrap: wrap;
+}
+
+#box7 {
+	flex-wrap: wrap-reverse;
+}
+
+#box8 {
+	justify-content: flex-start;
+}
+
+#box9 {
+	justify-content: flex-end;
+}
+
+#box10 {
+	justify-content: center;
+}
+
+#box11 {
+	justify-content: space-between;
+}
+
+#box12 {
+	justify-content: space-around;
+}
+
+#box13 {
+	align-items: flex-start;
+}
+
+#box14 {
+	align-items: flex-end;
+}
+
+#box15 {
+	align-items: center;
+}
+
+#box16 {
+	align-items: baseline;
+}
+
+#box17 {
+	align-items: stretch;
+}
+
+#box18 {
+	height: 300px;
+	flex-wrap: wrap;
+
+	align-content: flex-start;
+}
+
+#box19 {
+	height: 300px;
+	flex-wrap: wrap;
+
+	align-content: flex-end;
+}
+
+#box20 {
+	height: 300px;
+	flex-wrap: wrap;
+
+	align-content: center;
+}
+
+#box21 {
+	height: 300px;
+	flex-wrap: wrap;
+
+	align-content: space-between;
+}
+
+#box22 {
+	height: 300px;
+	flex-wrap: wrap;
+
+	align-content: space-around;
+}
+
+#box23 {
+	height: 300px;
+	flex-wrap: wrap;
+
+	align-content: stretch;
+}
+
+#box24 {
+	justify-content: space-around;
+}
+
+#box25 {
+	justify-content: flex-start;
+}
+
+#box26 {
+	flex-direction: row-reverse;
+}
+
+#box27 {
+	flex-direction: column;
+}
+
+
+
+
+
+
+.item1 {
+	padding: 6px 5px;
+}
+
+.item2 {
+	padding: 20px 5px;
+	font-size: 20px;
+}
+
+.item3 {
+	padding: 2px 5px;
+	font-size: 8px;
+}
+
+.item4 {
+	order: 5;
+}
+
+.item5 {
+	order: -1;
+}
+
+.item6 {
+	order: 4;
+}
+
+.item7 {
+	flex-grow: 0;
+}
+
+.item8 {
+	flex-grow: 2;
+}
+
+.item9 {
+	flex-grow: 1;
+}
+
+.item10 {
+	flex-shrink: 1;
+	width: 200px;
+}
+
+.item11 {
+	flex-shrink: 0;
+	width: 100px;
+}
+
+.item12 {
+	flex-shrink: 1;
+	width: 200px;
+}
+
+.item13 {
+	width: 200px;
+	flex-basis: 200px;
+}
+
+.item14 {
+	padding: 15px 5px;
+	font-size: 25px;
+	align-self: flex-start;
+}
+
+.item15 {
+	padding: 2px 5px;
+	font-size: 10px;
+	align-self: flex-end;
+}
+
+.item16 {
+	padding: 20px 5px;
+	font-size: 20px;
+	align-self: center;
+}
+
+.item17 {
+	padding: 7px 5px;
+	align-self: baseline;
+}
+
+.item18 {
+	padding: 5px 5px;
+	font-size: 8px;
+	align-self: stretch;
+}
