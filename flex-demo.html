@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="605401951@qq.com">
+	<title>Flexbox Test</title>
+	<link rel="stylesheet" href="flex-demo.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Flex布局演示</h1>
+		<div>
+			<p>
+				该页面主要演示Flex布局中各个属性的表现效果，内容主要参考阮一峰的Flex布局教程。地址是：<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a>
+			</p>
+			<p>
+				演示中减去了基础的概念说明，包括主轴，交叉轴等，这一块不了解的可以去参考上面阮一峰的教程。
+			</p>
+			<p>
+				演示分两部分：第一部分放在<code>.flexWrap</code>中，主要说明Flex属性及取值；第二部分则放在<code>#boxX</code>及<code>.itemX</code>中，主要演示Flex属性在不同取值下的表现。
+			</p>
+			<p>整个页面做了简单的自适应，可以通过调整页面宽度查看Flex属性的表现效果</p>
+		</div>
+		
+
+		<h2>一、 容器上的属性</h2>
+
+		<div class="title">
+			<h3>flex-direction属性</h3>
+			<p>这个属性是用来确定子元素的排布方向，主要分沿主轴从左到右<code>row</code>，沿主轴从右到左<code>row-reverse</code>，沿交叉轴从上到下<code>column</code>及沿交叉轴从下到上<code>column-reverse</code>。</p>
+			<div class="codeWrap">
+				<pre>#box1 {
+	flex-direction: row | row-reverse | column | column-reverse;
+}</pre>
+			</div>
+		</div>
+		<div class="flexWrap">
+			<div class="showBox">
+				<div class="box boxMin" id="box1">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>flex-direction: row;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box2">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>flex-direction: row-reverse;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box3">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>flex-direction: column;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box4">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>flex-direction: column-reverse;</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="title">
+			<h3>flex-wrap属性</h3>
+			<p>这个属性是用来确定子元素排布是否换行，包括不换行<code>nowrap</code>，换行排布<code>wrap</code>及上下颠倒换行排布<code>wrap-reverse</code>。</p>
+			<div class="codeWrap">
+				<pre>#box5 {
+	flex-wrap: nowrap | wrap | wrap-reverse;
+}</pre>
+			</div>
+		</div>
+		<div class="flexWrap">
+			<div class="showBox">
+				<div class="box boxMin" id="box5">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+					<div class="item"><span>5</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>flex-wrap: nowrap;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box6">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+					<div class="item"><span>5</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>flex-wrap: wrap;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box7">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+					<div class="item"><span>5</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>flex-wrap: wrap-reverse;</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="title">
+			<h3>flex-flow属性</h3>
+			<p>这个属性是<code>flex-direction</code>属性和<code>flex-wrap</code>属性的简写形式，默认值为<code>row nowrap</code>。</p>
+			<div class="codeWrap">
+				<pre>#box {
+	&lt;flex-flow&gt; || &lt;flex-wrap&gt;;
+}</pre>
+			</div>
+		</div>
+
+		<div class="title">
+			<h3>justify-content属性</h3>
+			<p>这个属性是用来确定子元素排布在主轴上的对齐方式，包括左对齐<code>flex-start</code>，右对齐<code>flex-end</code>，中间对齐<code>center</code>，两侧对齐<code>space-between</code>及间隔对齐<code>space-around</code>。</p>
+			<div class="codeWrap">
+				<pre>#box8 {
+	justify-content: flex-start | flex-end | center | space-between | space-around;
+}</pre>
+			</div>
+		</div>
+		<div class="flexWrap">
+			<div class="showBox">
+				<div class="box boxMin" id="box8">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>justify-content: flex-start;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box9">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>justify-content: flex-end;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box10">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>justify-content: center;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box11">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>justify-content: space-between;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box12">
+					<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>justify-content: space-around;</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="title">
+			<h3>align-items属性</h3>
+			<p>这个属性是用来确定子元素排布在交叉轴上的对齐方式，包括上对齐<code>flex-start</code>，下对齐<code>flex-end</code>，中间垂直对齐<code>center</code>，默认高度撑满<code>baseline</code>及文字基线对齐<code>stretch</code>。</p>
+			<div class="codeWrap">
+				<pre>#box13 {
+	align-items: flex-start | flex-end | center | baseline | stretch;
+}</pre>
+			</div>
+		</div>
+		<div class="flexWrap">
+			<div class="showBox">
+				<div class="box boxMin" id="box13">
+					<div class="item item1"><span>1</span></div>
+					<div class="item item2"><span>2</span></div>
+					<div class="item item3"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>align-items: flex-start;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box14">
+					<div class="item item1"><span>1</span></div>
+					<div class="item item2"><span>2</span></div>
+					<div class="item item3"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>align-items:  flex-end;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box15">
+					<div class="item item1"><span>1</span></div>
+					<div class="item item2"><span>2</span></div>
+					<div class="item item3"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>align-items: center;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box16">
+					<div class="item item1"><span>1</span></div>
+					<div class="item item2"><span>2</span></div>
+					<div class="item item3"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>align-items: baseline;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box17">
+					<div class="item item1"><span>1</span></div>
+					<div class="item item2"><span>2</span></div>
+					<div class="item item3"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>align-items: stretch;</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="title">
+			<h3>align-content属性</h3>
+			<p>这个属性是用来确定多轴线排布的对齐方式，包括交叉轴起始点对齐<code>flex-start</code>，交叉轴终点对齐<code>flex-end</code>，交叉轴中点对齐<code>center</code>，沿交叉轴两侧对齐<code>space-between</code>，沿交叉轴间隔对齐<code>space-around</code>及默认轴线高度撑满交叉轴对齐<code>stretch</code>。</p>
+			<div class="codeWrap">
+				<pre>#box18 {
+	align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}</pre>
+			</div>
+		</div>
+		<div class="flexWrap">
+			<div class="showBox">
+				<div class="box boxMin" id="box18">
+				 	<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+					<div class="item"><span>5</span></div>
+					<div class="item"><span>6</span></div>
+					<div class="item"><span>7</span></div>
+					<div class="item"><span>8</span></div>
+					<div class="item"><span>9</span></div>
+					<div class="item"><span>10</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>align-content: flex-start;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box19">
+				 	<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+					<div class="item"><span>5</span></div>
+					<div class="item"><span>6</span></div>
+					<div class="item"><span>7</span></div>
+					<div class="item"><span>8</span></div>
+					<div class="item"><span>9</span></div>
+					<div class="item"><span>10</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>align-content: flex-end;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box20">
+				 	<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+					<div class="item"><span>5</span></div>
+					<div class="item"><span>6</span></div>
+					<div class="item"><span>7</span></div>
+					<div class="item"><span>8</span></div>
+					<div class="item"><span>9</span></div>
+					<div class="item"><span>10</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>align-content: center;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box21">
+				 	<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+					<div class="item"><span>5</span></div>
+					<div class="item"><span>6</span></div>
+					<div class="item"><span>7</span></div>
+					<div class="item"><span>8</span></div>
+					<div class="item"><span>9</span></div>
+					<div class="item"><span>10</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>align-content: space-between;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box22">
+				 	<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+					<div class="item"><span>5</span></div>
+					<div class="item"><span>6</span></div>
+					<div class="item"><span>7</span></div>
+					<div class="item"><span>8</span></div>
+					<div class="item"><span>9</span></div>
+					<div class="item"><span>10</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>align-content: space-around;</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMin" id="box23">
+				 	<div class="item"><span>1</span></div>
+					<div class="item"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+					<div class="item"><span>4</span></div>
+					<div class="item"><span>5</span></div>
+					<div class="item"><span>6</span></div>
+					<div class="item"><span>7</span></div>
+					<div class="item"><span>8</span></div>
+					<div class="item"><span>9</span></div>
+					<div class="item"><span>10</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>align-content: stretch;</span>
+				</div>
+			</div>
+		</div>
+
+
+		<h2>二、 项目上的属性</h2>
+
+		<div class="title">
+			<h3>order属性</h3>
+			<p>这个属性是用来确定子元素的排列顺序，数值越小，排列越靠前。默认为<code>0</code>，可取负值。</p>
+			<div class="codeWrap">
+				<pre>.item4 {
+	order: &lt;integer&gt;;
+}</pre>
+			</div>
+		</div>
+		<div class="flexWrap">
+			<div class="showBox">
+				<div class="box boxMax" id="box24">
+					<div class="item item4"><span>1</span></div>
+					<div class="item item5"><span>2</span></div>
+					<div class="item item6"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>{justify-content: space-around;}</span>
+					<span>/* No.1 */ { order: 5; }</span>
+					<span>/* No.2 */ { order: -1; }</span>
+					<span>/* No.3 */ { order: 4; }</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMax" id="box25">
+					<div class="item item4"><span>1</span></div>
+					<div class="item item5"><span>2</span></div>
+					<div class="item item6"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>{ justify-content: flex-start; }</span>
+					<span>/* No.1 */ { order: 5; }</span>
+					<span>/* No.2 */ { order: -1; }</span>
+					<span>/* No.3 */ { order: 4; }</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMax" id="box26">
+					<div class="item item4"><span>1</span></div>
+					<div class="item item5"><span>2</span></div>
+					<div class="item item6"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>{ flex-direction: row-reverse; }</span>
+					<span>/* No.1 */ { order: 5; }</span>
+					<span>/* No.2 */ { order: -1; }</span>
+					<span>/* No.3 */ { order: 4; }</span>
+				</div>
+			</div>
+			<div class="showBox">
+				<div class="box boxMax" id="box27">
+					<div class="item item4"><span>1</span></div>
+					<div class="item item5"><span>2</span></div>
+					<div class="item item6"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>{ flex-direction: column; }</span>
+					<span>/* No.1 */ { order: 5; }</span>
+					<span>/* No.2 */ { order: -1; }</span>
+					<span>/* No.3 */ { order: 4; }</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="title">
+			<h3>flex-grow属性</h3>
+			<p>这个属性是用来确定子元素的放大比例，项目将按比例撑满宽度。默认为<code>0</code>，即有剩余空间也不放大。</p>
+			<div class="codeWrap">
+				<pre>.item7 {
+	flex-grow: &lt;number&gt;;  /* default 0 */
+}</pre>
+			</div>
+		</div>
+		<div class="flexWrap flexAdjust">
+			<div class="showBox">
+				<div class="box boxMax">
+					<div class="item item7"><span>1</span></div>
+					<div class="item item8"><span>2</span></div>
+					<div class="item item9"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>/* No.1 */ { flex-grow: 0; }</span>
+					<span>/* No.2 */ { flex-grow: 2; }</span>
+					<span>/* No.3 */ { flex-grow: 1; }</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="title">
+			<h3>flex-shrink属性</h3>
+			<p>这个属性是用来确定子元素的缩小比例，项目将按比例缩小宽度。设置为<code>0</code>时，子元素不参与比例收缩。不可取负值。</p>
+			<div class="codeWrap">
+				<pre>.item10 {
+	flex-shrink: &lt;number&gt;;  /* default 1 */
+}</pre>
+			</div>
+		</div>
+		<div class="flexWrap flexAdjust">
+			<div class="showBox">
+				<div class="box boxMax">
+					<div class="item item10"><span>1</span></div>
+					<div class="item item11"><span>2</span></div>
+					<div class="item item12"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>/* No.1 */ { flex-shrink: 1; width: 100px; }</span>
+					<span>/* No.2 */ { flex-shrink: 0; width: 200px; }</span>
+					<span>/* No.3 */ { flex-shrink: 1; width: 100px; }</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="title">
+			<h3>flex-basis属性</h3>
+			<p>这个属性是用来确定子元素占据主轴空间。浏览器将根据这个属性计算主轴是否有多余空间。默认值为<code>auto</code>，即子元素本来大小。</p>
+			<div class="codeWrap">
+				<pre>.item13 {
+	flex-basis: &lt;length&gt; | auto;  /* default auto */
+}</pre>
+			</div>
+		</div>
+		<div class="flexWrap flexAdjust">
+			<div class="showBox">
+				<div class="box boxMax">
+					<div class="item"><span>1</span></div>
+					<div class="item item13"><span>2</span></div>
+					<div class="item"><span>3</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>/* No.1 */ { flex-basis: auto; }</span>
+					<span>/* No.2 */ { width: 200px; flex-basis: 200px; }</span>
+					<span>/* No.3 */ { flex-basis: auto; }</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="title">
+			<h3>flex属性</h3>
+			<p>这个属性是<code>flex-grow</code>, <code>flex-shrink</code>和<code>flex-basis</code>的简写，默认值为<code>0 1 auto</code>。后两个属性可选。</p>
+			<div class="codeWrap">
+				<pre>#item {
+	flex: none | [ &lt;'flex-grow'&gt; &lt;'flex-shrink'&gt;? || &lt;'flex-basis'&gt;;
+}</pre>
+			</div>
+		</div>
+
+		<div class="title">
+			<h3>align-self属性</h3>
+			<p>这个属性是允许子元素异于其他子元素的对齐方式，直接覆盖父元素的对齐属性<code>align-items</code>。默认值为auto，及继承父元素对齐方式。</p>
+			<div class="codeWrap">
+				<pre>.item14 {
+	align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}</pre>
+			</div>
+		</div>
+		<div class="flexWrap flexAdjust">
+			<div class="showBox">
+				<div class="box boxMax">
+					<div class="item item14"><span>1</span></div>
+					<div class="item item15"><span>2</span></div>
+					<div class="item item16"><span>3</span></div>
+					<div class="item item17"><span>4</span></div>
+					<div class="item item18"><span>5</span></div>
+				</div>
+				<div class="attrCodeWrap">
+					<span>/* No.1 */ { padding: 15px 5px; font-size: 25px; align-self: flex-start; }</span>
+					<span>/* No.2 */ { padding: 2px 5px; font-size: 10px; align-self: flex-end; }</span>
+					<span>/* No.3 */ { padding: 20px 5px; font-size: 20px; align-self: center; }</span>
+					<span>/* No.4 */ { padding: 7px 5px; align-self: baseline; }</span>
+					<span>/* No.5 */ { padding: 5px 5px; font-size: 8px; align-self: stretch; }</span>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+
+
+</body>
+</html>
